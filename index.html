@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iglesia Más Que Vencedores </title>
+  <!-- Favicon o icono de la página -->
+  <link rel="icon" type="https://agsalmeida.files.wordpress.com/2014/05/a-cruz-de-cristo.jpg" href="https://agsalmeida.files.wordpress.com/2014/05/a-cruz-de-cristo.jpg">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Iconos (Font Awesome Free CDN) -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <style>
+    /* Variables de tema */
+    :root{
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --accent:#0f172a; /* azul profundo para acentos */
+      --primary:#111827;
+      --glass: rgba(255,255,255,0.6);
+      --card-shadow: 0 10px 30px rgba(17,24,39,0.08), 0 2px 6px rgba(17,24,39,0.04);
+      --soft-shadow: 0 8px 24px rgba(15,23,42,0.08);
+      --radius: 14px;
+    }
+
+    /* Reset básico */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--primary);
+      background:linear-gradient(180deg,#fbfdff 0%, #ffffff 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:80px;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      position:sticky;top:16px;z-index:40;margin:0 auto;max-width:1200px;padding:12px 20px;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);border-radius:16px;box-shadow:var(--card-shadow);display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff 0%, #f3f4f6 100%);box-shadow:0 6px 18px rgba(15,23,42,0.06);}
+    .brand h1{font-family:'Playfair Display', serif;font-size:18px;margin:0;font-weight:700;letter-spacing:0.2px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--primary);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px}
+    .nav-links a:hover{background:var(--glass)}
+
+    .cta{background:linear-gradient(90deg,#0ea5a4,#2563eb);color:white;padding:10px 14px;border-radius:12px;font-weight:700;box-shadow:0 8px 24px rgba(37,99,235,0.2)}
+
+    /* HERO */
+    .hero{max-width:1200px;margin:26px auto 40px;position:relative;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:stretch}
+
+    /* imagen hero combinada usando pseudo-elementos para entrelazar y separar */
+    .hero .visual{position:relative;border-radius:18px;overflow:hidden;min-height:420px;box-shadow:var(--soft-shadow)}
+    .hero .visual::before{content:'';position:absolute;inset:0;background-image:url('https://www.thoughtco.com/thmb/zyF536A6TBYs_TmuI_BNB1YvPyk=/7360x4912/filters:fill(auto,1)/wooden-cross-on-a-hill-at-sunset-631151317-58b9d6c25f9b58af5cab9544.jpg');background-size:cover;background-position:center;filter:contrast(105%) saturate(110%);mix-blend-mode:normal}
+    .hero .visual::after{content:'';position:absolute;inset:0;background-image:url('https://img.freepik.com/fotos-premium/a-cara-de-jesus-cristo_841543-11541.jpg');background-size:cover;background-position:center;opacity:0.86;mix-blend-mode:screen;transform:translateX(6%)}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.04));}
+    .hero .visual .badge{position:absolute;left:20px;top:20px;background:rgba(255,255,255,0.85);padding:10px 14px;border-radius:12px;font-weight:700;box-shadow:var(--card-shadow)}
+
+    .hero .content{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.98));padding:32px;border-radius:18px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:18px}
+    .hero h2{font-family:'Playfair Display';font-size:36px;margin:0;color:var(--accent);}
+    .hero p.lead{margin:0;color:var(--muted);font-size:16px}
+
+    .actions{display:flex;gap:12px;margin-top:6px}
+    .btn{padding:12px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn-outline{background:transparent;border:2px solid rgba(15,23,42,0.06)}
+
+    /* Secciones */
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .card{background:white;border-radius:14px;padding:16px;box-shadow:var(--card-shadow)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .card h3{margin:12px 0 6px;font-size:18px}
+    .card p{color:var(--muted);font-size:14px;margin:0}
+
+    /* Galería y eventos */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+
+    /* Sección Biblia / Cristo */
+    .bible{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;margin-top:34px}
+    .bible .panel{background:linear-gradient(180deg,#fff, #fbfdff);padding:22px;border-radius:14px;box-shadow:var(--card-shadow)}
+    .bible .verse{font-family:'Playfair Display';font-size:20px;color:var(--accent);}
+
+    /* Footer */
+    footer{max-width:1200px;margin:44px auto 24px;padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.9), rgba(250,250,250,0.95));box-shadow:var(--card-shadow)}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr;}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .bible{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      .nav-links{display:none}
+      .navbar{padding:10px}
+      .cards{grid-template-columns:1fr}
+    }
+
+    /* Estilo de texto tipo pincel para títulos secundarios */
+    .brush{font-family:'Playfair Display', serif;font-style:italic;letter-spacing:0.6px}
+
+  </style>
+</head>
+<body>
+
+  <div style="height:16px"></div>
+  <div class="container">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><i class="fa-solid fa-dove" style="font-size:20px;color:#2563eb"></i></div>
+        <div>
+          <h1>Más Que Vencedores</h1>
+          <p>Familia | Adoración | Servicio</p>
+        </div>
+      </div>
+
+      <div class="nav-links" role="menubar">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#jovenes">Jóvenes</a>
+        <a href="#ninos">Niños</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto" class="cta">Únete</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="visual" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="badge"><i class="fa-solid fa-church"></i> Bienvenidos #</div>
+      </div>
+
+      <div class="content">
+        <h2 class="brush">Iglesia Más Que Vencedores</h2>
+        <p class="lead">Somos una comunidad donde la juventud, las familias y los niños encuentran propósito, servicio y la verdad de Cristo. Únete a nuestros servicios dominicales, estudios bíblicos y actividades para todas las edades.</p>
+
+        <div class="actions">
+          <button class="btn cta" onclick="openSchedule()">Ver horarios</button>
+          <button class="btn btn-outline" onclick="scrollToSection('galeria')">Nuestra galería</button>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:180px;display:flex;gap:8px;align-items:center">
+            <img src="https://www.shutterstock.com/image-photo/different-musical-instruments-music-notes-600nw-2481827083.jpg" alt="Servicio" style="width:64px;height:64px;object-fit:cover;border-radius:10px">
+            <div>
+              <h3 style="margin:0;font-size:15px">Ubicacion</h3>
+              <p style="margin:0;color:var(--muted);font-size:13px">Manuel Avila Camacho 175-A</p>
+            </div>
+          </div>
+
+          <div class="card" style="flex:1;min-width:180px;display:flex;gap:8px;align-items:center">
+            <img src="https://thumbs.dreamstime.com/b/estudiantes-j%C3%B3venes-hombre-y-mujer-con-anteojos-para-la-visi%C3%B3n-en-el-fondo-amarillo-felices-hombres-mujeres-199622231.jpg" alt="Jovenes" style="width:64px;height:64px;object-fit:cover;border-radius:10px">
+            <div>
+              <h3 style="margin:0;font-size:15px">Min. de Jóvenes</h3>
+              <p style="margin:0;color:var(--muted);font-size:13px">Eventos semanales, crecimiento y comunidad.</p>
+            </div>
+          </div>
+
+          <div class="card" style="flex:1;min-width:180px;display:flex;gap:8px;align-items:center">
+            <img src="https://img.freepik.com/fotos-premium/ninos-felices-aislados-fondo-azul-estudio-parecen-felices-alegres-sinceros-copyspace_1042628-269558.jpg" alt="Niños" style="width:64px;height:64px;object-fit:cover;border-radius:10px">
+            <div>
+              <h3 style="margin:0;font-size:15px">Ministerio Infantil</h3>
+              <p style="margin:0;color:var(--muted);font-size:13px">Actividades seguras y creativas para los niños.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Servicios cards -->
+    <section id="servicios">
+      <h2 class="brush" style="font-size:22px">Nuestros servicios</h2>
+      <div class="cards" style="margin-bottom:12px">
+        <article class="card">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.sTm8N65mGaPmfxzmGYc2NgHaE7?cb=12&w=626&h=417&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Culto de adoración">
+          <h3>Adoración y Culto</h3>
+          <p>Con Alabanza Para Dios y un mensaje práctico para la vida diaria.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://tse1.explicit.bing.net/th/id/OIP.domNV_ELQlzoIwOoY5jwvQHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Estudio bíblico">
+          <h3>Estudios Bíblicos</h3>
+          <p>Sesiones en grupos pequeños para profundizar en la Palabra.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/022/985/554/small_2x/silhouette-teamwork-male-hikers-climbing-up-mountain-cliff-and-one-of-them-giving-helping-hand-people-helping-and-team-work-concept-photo.jpg" alt="Servicio comunitario">
+          <h3>Servicio y Alcance</h3>
+          <p>Proyectos comunitarios para servir y llevar esperanza.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria">
+      <h2 class="brush" style="font-size:22px">Galería de momentos</h2>
+      <div class="gallery">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.aT8YOkmoU3ff5s09MS7dMgHaE7?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="jovenes en servicio">
+        <img src="https://th.bing.com/th/id/R.c61aedb482d91d967188602b48abbc1c?rik=H3JLbv2yieNBXA&pid=ImgRaw&r=0" alt="niños">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.8h0OnVPyEaJqWGEu4LLbVgHaD4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="adoracion">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.E5ETZgqGULOfU7D1WCjhgAHaFj?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="evento comunitario">
+      </div>
+    </section>
+
+    <!-- Biblia / Cristo -->
+    <section class="bible">
+      <div class="panel">
+        <h3 class="brush">La Palabra</h3>
+        <p class="verse">"Tu palabra es lámpara a mis pies y luz en mi camino." — Salmo 119:105</p>
+        <p style="color:var(--muted);margin-top:10px">El solo Puede Llenar ese vacio en nuestro corazon, nada lo podra llenar mas que el</p>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="btn cta" onclick="openBible()">Estudios</button>
+          <button class="btn btn-outline" onclick="scrollToSection('servicios')">Ver temas</button>
+        </div>
+      </div>
+
+      <div class="panel" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+        <img src="https://wallpaperaccess.com/full/19627.jpg" alt="cruz" style="width:240px;border-radius:12px;box-shadow:var(--soft-shadow)">
+        <p style="color:var(--muted);text-align:center">Cristo es el centro de todo lo que hacemos. Ven y conoce una comunidad que adora y vive su enseñanza.</p>
+      </div>
+    </section>
+
+    <!-- Eventos / Próximos -->
+    <section style="margin-top:28px">
+      <h2 class="brush" style="font-size:22px">Próximos eventos</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+        <div class="card">
+          <h3>Servicio de Jóvenes</h3>
+          <p style="color:var(--muted)"><i class="fa-regular fa-calendar"></i> Todos los sábados • 6:00 PM</p>
+          <p style="margin-top:8px;color:var(--muted)">Música, testimonios y tiempo de compañerismo.</p>
+        </div>
+
+        <div class="card">
+          <h3>Matrimonios</h3>
+          <p style="color:var(--muted)"><i class="fa-regular fa-calendar"></i> Julio - Agost0</p>
+          <p style="margin-top:8px;color:var(--muted)">Ayuda y consejeria.</p>
+        </div>
+
+        <div class="card">
+          <h3>Alabanza Comunitaria</h3>
+          <p style="color:var(--muted)"><i class="fa-regular fa-calendar"></i> Domingo • 10:00AM a 12:00PM</p>
+          <p style="margin-top:8px;color:var(--muted)">Un tiempo para adorar en familia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" style="margin-top:28px">
+      <h2 class="brush" style="font-size:22px">Contáctanos</h2>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+        <div class="card">
+          <form onsubmit="submitForm(event)">
+            <label style="display:block;margin-bottom:8px;font-weight:700">Nombre</label>
+            <input required type="text" id="name" placeholder="Tu nombre" style="width:100%;padding:12px;border-radius:10px;border:1px solid #eef2f7;margin-bottom:10px">
+
+            <label style="display:block;margin-bottom:8px;font-weight:700">Correo</label>
+            <input required type="email" id="email" placeholder="correo@ejemplo.com" style="width:100%;padding:12px;border-radius:10px;border:1px solid #eef2f7;margin-bottom:10px">
+
+            <label style="display:block;margin-bottom:8px;font-weight:700">Mensaje</label>
+            <textarea required id="message" rows="4" placeholder="¿En qué podemos ayudarte?" style="width:100%;padding:12px;border-radius:10px;border:1px solid #eef2f7;margin-bottom:10px"></textarea>
+
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn cta" type="submit">Enviar</button>
+              <button class="btn btn-outline" type="button" onclick="openMap()">Cómo llegar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card" style="display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:flex-start">
+          <h3>Visítanos</h3>
+          <p style="color:var(--muted);margin:0">Sayula Jalisco</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a href="#" style="text-decoration:none;color:var(--primary);font-weight:700"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="#" style="text-decoration:none;color:var(--primary);font-weight:700"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>Más Que Vencedores</strong>
+          <p style="margin:0;color:var(--muted)">Comunidad, adoración y servicio</p>
+        </div>
+        <div style="color:var(--muted)">© <span id="year"></span> Todos los derechos reservados carlos Abner</div>
+      </div>
+    </footer>
+  </div>
+
+
+  <script>
+  // JavaScript funcional básico: navegación, formularios y acciones
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function scrollToSection(id){
+    const el = document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  function openSchedule(){
+    alert('Horarios:\nDomingo 10:00 AM - Culto familiar\nMiércoles 7:00 PM - Estudio Bíblico\nSábado 7:00 PM - Jóvenes');
+  }
+
+  function openBible(){
+    alert('Accede a nuestras lecciones bíblicas en línea. (En producción, aquí abriría una sección con recursos).');
+  }
+
+  // 🔹 Dirección exacta: Manuel Ávila Camacho 175 A, adelante del Farolito, al lado de la primaria
+  function openMap(){
+    const url = 'https://www.google.com/maps?q=Manuel+Ávila+Camacho+175+A,+Sayula,+Jalisco,+adelante+del+Farolito,+al+lado+de+la+primaria';
+    window.open(url, '_blank');
+  }
+
+  function submitForm(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if(!name || !email || !message){
+      alert('Por favor completa todos los campos.');
+      return;
+    }
+    alert('Gracias '+name+'! Tu mensaje ha sido recibido.');
+    e.target.reset();
+  }
+</script>
+
+   
+
+
+</body>
+</html>
