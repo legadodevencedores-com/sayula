@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vencedores - Iglesia en Sayula, Jalisco</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS (animaciones al hacer scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+  <style>
+    /* ========================
+       RESET / GLOBAL
+       ======================== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+    body {
+      font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+      color: #111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ========================
+       CONTAINER / LAYOUT
+       ======================== */
+    .container { width: min(1200px, 94%); margin: 0 auto; }
+
+    /* ========================
+       HEADER
+       ======================== */
+    header.site-header {
+      position: relative;
+      padding: 80px 0 60px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      overflow: visible;
+    }
+    .header-inner { display:flex; gap:30px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .brand {
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .brand h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.6rem;
+      color:#000;
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+    .brand p.lead {
+      max-width:760px;
+      font-size:1.05rem;
+      color:#222;
+      opacity:0.95;
+    }
+
+    /* Lottie muñeco (observando) */
+    .lottie-wrap {
+      width:160px; height:160px;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      background: linear-gradient(180deg,#fff,#f7f7f9);
+      display:flex; align-items:center; justify-content:center;
+    }
+
+    /* ========================
+       PRESENTACIÓN / HERO
+       ======================== */
+    .hero {
+      display:grid;
+      grid-template-columns: 1fr 460px;
+      gap:32px;
+      align-items:center;
+      padding:36px 0 60px;
+    }
+
+    .hero .hero-text h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color:#000;
+      margin-bottom:12px;
+    }
+    .hero .hero-text p {
+      font-size:1.05rem;
+      color:#222;
+      margin-bottom:18px;
+    }
+    /* Foto principal con forma orgánica */
+    .hero .hero-image {
+      width:100%;
+      height:420px;
+      border-radius: 36px 12px 36px 12px / 40% 60% 40% 60%;
+      overflow:hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.15);
+    }
+    .hero .hero-image img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* ========================
+       ICONOS LATERALES (MUCHOS) 
+       ======================== */
+    .advantages {
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin:22px 0 8px;
+    }
+
+    .adv-card {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      background: rgba(255,255,255,0.9);
+      padding:10px 14px;
+      border-radius:14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .adv-icon {
+      width:54px; height:54px;
+      border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background:#fff;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+      color:#000;
+      font-size:22px;
+    }
+    .adv-text {
+      font-size:0.95rem;
+      color:#111;
+      font-weight:600;
+    }
+
+    /* ========================
+       GALERÍA (GRID VARIADO; SCROLL HORIZONTAL EN MOBILE)
+       ======================== */
+    section.gallery {
+      padding:64px 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.0), rgba(250,250,252,1));
+    }
+    .gallery .title {
+      text-align:center; margin-bottom:28px;
+    }
+    .gallery .title h3 {
+      font-family:'Great Vibes', cursive;
+      font-size:2.4rem; color:#000; margin-bottom:6px;
+    }
+    .gallery .title p { color:#333; opacity:0.9; }
+
+    /* Desktop: Masonry-like grid using CSS Grid + grid-auto-flow: dense; */
+    .gallery-grid {
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 120px;
+      gap:14px;
+      align-items:stretch;
+    }
+
+    /* individual spans */
+    .item { overflow:hidden; border-radius:18px; position:relative; box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+    .item img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .6s ease; }
+    .item:hover img { transform: scale(1.06); }
+
+    /* Variantes: occupy different sizes */
+    .item.wide { grid-column: span 6; grid-row: span 2; border-radius:24px; }
+    .item.tall { grid-column: span 4; grid-row: span 3; border-radius:24px; }
+    .item.large { grid-column: span 8; grid-row: span 3; border-radius:30px; }
+    .item.small { grid-column: span 3; grid-row: span 1; border-radius:16px; }
+    .item.rect { grid-column: span 5; grid-row: span 2; border-radius:20px; }
+
+    /* Overlay captions */
+    .item .caption {
+      position:absolute; left:12px; bottom:12px; color:#fff;
+      text-shadow:0 4px 18px rgba(0,0,0,0.5); font-weight:700; font-size:0.98rem;
+      background: linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0.08));
+      padding:6px 10px; border-radius:10px;
+      backdrop-filter: blur(4px);
+    }
+
+    
+
+    /* Mobile: Force horizontal scroll strip so images remain visible "together" */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; grid-auto-rows: auto; padding-bottom:30px; }
+      .hero .hero-image { height:300px; }
+
+      .gallery-grid {
+        display:flex;
+        flex-direction:row;
+        overflow-x:auto;
+        gap:12px;
+        padding:12px 6px;
+        scroll-snap-type:x mandatory;
+      }
+      .gallery-grid .item {
+        min-width: 220px;
+        height: 160px;
+        flex: 0 0 auto;
+        scroll-snap-align:center;
+      }
+      .gallery-grid .item.large, .gallery-grid .item.wide, .gallery-grid .item.tall {
+        min-width: 320px;
+        height: 200px;
+      }
+    }
+
+    /* ========================
+       MAPA
+       ======================== */
+    section.map {
+      padding:64px 0;
+      background: rgba(255,255,255,0.98);
+      border-top: 1px solid rgba(0,0,0,0.04);
+    }
+    .map .title { text-align:center; margin-bottom:16px; }
+    .map .title h3 { font-family:'Great Vibes', cursive; font-size:2rem; color:#000; }
+    .map .address { text-align:center; color:#222; margin-bottom:18px; font-weight:600; }
+
+    .map .map-frame {
+      display:flex; justify-content:center;
+      padding: 10px 0 30px;
+    }
+    .map iframe {
+      width: 88%; height: 420px; border: none; border-radius:18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    /* ========================
+       CTA / FOOTER
+       ======================== */
+    .cta {
+      background: linear-gradient(180deg, rgba(250,250,252,1), rgba(245,247,250,1));
+      padding:36px 0;
+      text-align:center;
+    }
+    .cta .btn {
+      display:inline-block; padding:14px 26px; border-radius:12px;
+      background:#111; color:#fff; font-weight:700; box-shadow: 0 12px 30px rgba(17,17,17,0.14);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .cta .btn:hover { transform: translateY(-6px); box-shadow: 0 22px 40px rgba(17,17,17,0.2); }
+
+    footer.site-footer {
+      padding:36px 0;
+      text-align:center;
+      color:#fff;
+      background:#000;
+    }
+    footer.site-footer p { margin-bottom:8px; font-size:0.98rem; }
+    footer.site-footer .small { opacity:0.85; font-size:0.9rem; }
+
+    /* small screens tweaks */
+    @media (max-width:480px) {
+      .brand h1 { font-size:2.6rem; }
+      .brand p.lead { font-size:0.98rem; }
+      .adv-text { font-size:0.9rem; }
+      .map iframe { height: 320px; width: 96%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" data-aos="fade-right">
+        <h1>Vencedores</h1>
+        <p class="lead">Jesús es la luz. Ven a conocer su casa en Sayula, Jalisco — Manuel Ávila Camacho 175A, por la entrada, adelante del Farolito.</p>
+
+        <!-- Iconos pequeños al lado (muchos) -->
+        <div class="advantages" aria-hidden="true">
+          <div class="adv-card"><div class="adv-icon"><i class="fa-solid fa-church"></i></div><div class="adv-text">Servicio</div></div>
+          <div class="adv-card"><div class="adv-icon"><i class="fa-solid fa-bible"></i></div><div class="adv-text">Biblia</div></div>
+          <div class="adv-card"><div class="adv-icon"><i class="fa-solid fa-hands-praying"></i></div><div class="adv-text">Oración</div></div>
+          <div class="adv-card"><div class="adv-icon"><i class="fa-solid fa-child-reaching"></i></div><div class="adv-text">Niñez</div></div>
+          <div class="adv-card"><div class="adv-icon"><i class="fa-solid fa-music"></i></div><div class="adv-text">Alabanza</div></div>
+          <div class="adv-card"><div class="adv-icon"><i class="fa-solid fa-globe"></i></div><div class="adv-text">Misión</div></div>
+          <div class="adv-card"><div class="adv-icon"><i class="fa-solid fa-hands-helping"></i></div><div class="adv-text">Comunidad</div></div>
+        </div>
+      </div>
+
+      <!-- Lottie muñeco observando -->
+      <div class="lottie-wrap" data-aos="fade-left" aria-hidden="true">
+        <lottie-player src="https://lottie.host/f0e72f12-548a-4cb9-98d5-c1edbf63a0c8/W5RkEAdbzV.json" background="transparent" speed="1" loop autoplay style="width:100%;height:100%;"></lottie-player>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO / PRESENTACIÓN ========== -->
+  <main>
+    <section class="container hero" aria-labelledby="hero-title">
+      <div class="hero-text" data-aos="fade-up">
+        <h2 id="hero-title">El Amor de Cristo nos Une</h2>
+        <p>Somos una comunidad que busca compartir el mensaje de salvación y esperanza. Aquí encontrarás un espacio seguro para adorar, aprender y servir. Nuestro propósito: conocer a Jesús y llevar su luz al mundo.</p>
+
+        <!-- CTA simple -->
+        <div style="margin-top:18px;">
+          <a class="btn" href="#mapa" style="background:#111;color:#fff;padding:12px 18px;border-radius:12px;display:inline-block;font-weight:700;box-shadow:0 12px 30px rgba(0,0,0,0.12)">Encuéntranos</a>
+        </div>
+      </div>
+
+      <!-- Lottie muñeco observando -->
+<div class="lottie-wrap" data-aos="fade-left" aria-hidden="true">
+  <!-- 👇 AGREGA esta línea dentro del <head> de tu HTML -->
+  <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+  
+  <lottie-player 
+    src="https://lottie.host/f0e72f12-548a-4cb9-98d5-c1edbf63a0c8/W5RkEAdbzV.json" 
+    background="transparent" 
+    speed="1" 
+    loop 
+    autoplay 
+    style="width:100%;height:100%;">
+  </lottie-player>
+</div>
+
+    </section>
+
+    <!-- ========== GALERÍA ========== -->
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="container title" data-aos="fade-up">
+        <h3 id="gallery-title">Momentos & Fotos</h3>
+        <p>Galería con momentos de celebración, oración y comunidad. En pantallas pequeñas desliza horizontalmente para ver todas las imágenes sin que la sección se extienda demasiado.</p>
+      </div>
+
+      <!-- GRID LARGE (desktop) / HORIZONTAL SCROLL (mobile) -->
+      <div class="container">
+        <div class="gallery-grid" data-aos="fade-up" role="list" aria-label="Galería de la iglesia">
+          <!-- ITEM 1: Large -->
+          <div class="item large" role="listitem">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.EfKC-WjN-QDesz8U_9DguAHaE5?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Alabanza congregación">
+            <div class="caption">Alabanza y Gloria</div>
+          </div>
+
+          <!-- ITEM 2: Wide -->
+          <div class="item wide" role="listitem">
+            <img src="https://pulpitosbetel.com.br/wp-content/uploads/2024/11/Abraaoo-min-1-1024x1024.jpg" alt="Niños en ministerio">
+            <div class="caption">Ministerio </div>
+          </div>
+
+          <!-- ITEM 3: Tall -->
+          <div class="item tall" role="listitem">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.RQ0-3Wz5UkiF1jFR40ZQGQHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Oración ">
+            <div class="caption">Oración</div>
+          </div>
+
+          <!-- ITEM 4: Small -->
+          <div class="item small" role="listitem">
+            <img src="https://th.bing.com/th/id/R.c807876ea3e5da11fea7288ab03db7ed?rik=MEKhBMm0Q5eKig&pid=ImgRaw&r=0" alt="Biblia abierta">
+            <div class="caption">La Palabra</div>
+          </div>
+
+          <!-- ITEM 5: Rect -->
+          <div class="item rect" role="listitem">
+            <img src="https://www.quitoinforma.gob.ec/wp-content/uploads/2017/07/Feria-de-seguridad-Calderon-22-jul-2017-8.jpg" alt="Servicios y comunidad">
+            <div class="caption">Servicio</div>
+          </div>
+
+          <!-- ITEM 6: Small -->
+          <div class="item small" role="listitem">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.XmK--Jzw17tA8Le599ZIXAHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Reunión juvenil">
+            <div class="caption">Juventud</div>
+          </div>
+
+          <!-- ITEM 7: Wide -->
+          <div class="item wide" role="listitem">
+            <img src="https://tse2.mm.bing.net/th/id/OIP._-CanPGu13LxfS4oQhoS7wHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Entrega y servicio">
+            <div class="caption">Creatividad Niños</div>
+          </div>
+
+          <!-- ITEM 8: Small -->
+          <div class="item small" role="listitem">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.LFos4NprRzggF331LcvABwHaEJ?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cantos y música">
+            <div class="caption">Adoracion</div>
+          </div>
+
+          <!-- ITEM 9: Rect -->
+          <div class="item rect" role="listitem">
+            <img src="https://th.bing.com/th/id/R.1b8872c4e453157728ed2f5e69992240?rik=LXk45MPgPtWZCw&pid=ImgRaw&r=0" alt="Comunidad compartiendo">
+            <div class="caption">Fraternidad</div>
+          </div>
+
+          <!-- ITEM 10: Small -->
+          <div class="item small" role="listitem">
+            <img src="https://tse1.explicit.bing.net/th/id/OIP.ZlrZFd2ivnX9LP73Rn51XgHaFA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Niños dibujando">
+            <div class="caption">Creatividad</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MAPA ========== -->
+    <section id="mapa" class="map" aria-labelledby="mapa-title">
+      <div class="container">
+        <div class="title" data-aos="fade-up">
+          <h3 id="mapa-title">Encuéntranos en Sayula</h3>
+          <p class="address">Manuel Ávila Camacho 175A, por la entrada de Sayula, adelante del Farolito — Sayula, Jalisco</p>
+        </div>
+
+        <div class="map-frame" data-aos="fade-up">
+          <!-- Google Maps embed centrado en Sayula / El Farolito (ajusta si necesitas coord precisas) -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.574015480642!2d-103.60392652426856!3d19.8844123264764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f086c45809eaf%3A0x4e11a76a15404cd!2sEl%20Farolito!5e0!3m2!1ses!2smx!4v1696600000000!5m2!1ses!2smx" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA / BOTONES ========== -->
+    <section class="cta" data-aos="fade-up">
+      <div class="container">
+        <p style="font-weight:700;font-size:1.05rem;color:#111;margin-bottom:10px;">¿Quieres visitarnos este domingo?</p>
+        <a class="btn" href="#mapa" aria-label="Ver mapa y dirección">Ver ubicación &nbsp;<i class="fa-solid fa-location-dot" style="margin-left:8px;"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 <strong>Vencedores</strong> — Sayula, Jalisco</p>
+      <p class="small">Jesús es la luz que guía nuestro camino. Manuel Ávila Camacho 175A (entrada Sayula) — Frente al Farolito</p>
+    </div>
+  </footer>
+
+  <!-- ======= SCRIPTS ======= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // Inicializar AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // Mejora: permitir click en item para abrir imagen en nueva pestaña (no rompe estilos)
+    document.addEventListener('click', function (e) {
+      const item = e.target.closest('.gallery-grid .item');
+      if (!item) return;
+      const img = item.querySelector('img');
+      if (img) window.open(img.src, '_blank');
+    });
+
+
+  </script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+</body>
+</html>
