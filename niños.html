@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Infantil Bíblica</title>
+  <!-- Fuente cursiva divertida para niños -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Iconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Pacifico', cursive;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #FF6F61;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      color: #4CAF50;
+      margin-top: 10px;
+    }
+
+    /* Bolitas de colores animadas */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Sección de versículos */
+    section.versiculos {
+      padding: 50px 20px;
+      text-align: center;
+      background: #fefefe;
+    }
+
+    section.versiculos h2 {
+      font-size: 2.5rem;
+      color: #FFB347;
+      margin-bottom: 20px;
+    }
+
+    section.versiculos p {
+      font-size: 1.3rem;
+      color: #6A1B9A;
+      margin: 10px 0;
+    }
+
+    /* Tarjetas con imágenes */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #FFF0F5;
+      border-radius: 25px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .card h3 {
+      margin-top: 15px;
+      font-size: 1.5rem;
+      color: #FF6F61;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    /* Iconos divertidos */
+    .icons {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .icons i {
+      font-size: 3rem;
+      margin: 15px;
+      color: #FFB347;
+      transition: transform 0.3s;
+    }
+
+    .icons i:hover {
+      transform: rotate(20deg) scale(1.2);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #FF6F61;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      font-size: 1.1rem;
+    }
+
+    /* Responsivo */
+    @media(max-width: 768px){
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Bolitas decorativas -->
+  <div class="circle" style="width:60px;height:60px;background:#FF6F61;top:50px;left:20px;"></div>
+  <div class="circle" style="width:40px;height:40px;background:#4CAF50;top:150px;left:200px;"></div>
+  <div class="circle" style="width:50px;height:50px;background:#FFB347;top:300px;left:100px;"></div>
+  <div class="circle" style="width:70px;height:70px;background:#6A1B9A;top:400px;left:250px;"></div>
+  <div class="circle" style="width:30px;height:30px;background:#2196F3;top:500px;left:50px;"></div>
+
+  <header>
+    <h1>¡Bienvenidos Niños!</h1>
+    <p>Descubriendo la Palabra de Dios con alegría</p>
+  </header>
+
+  <section class="versiculos">
+    <h2>Versículos para Niños</h2>
+    <p>"Dejad que los niños vengan a mí, y no se lo impidáis, porque de los tales es el reino de Dios." - Mateo 19:14</p>
+    <p>"El Señor es mi pastor; nada me faltará." - Salmo 23:1</p>
+    <p>"Honra a tu padre y a tu madre." - Éxodo 20:12</p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <img src="https://img.freepik.com/fotos-premium/ninos-jugando-fondo-blanco-alta-calidad-ultra_889056-86308.jpg" alt="niños leyendo">
+      <h3>Lectura Bíblica</h3>
+      <p>Aprendemos historias de la Biblia con juegos y actividades divertidas.</p>
+    </div>
+    <div class="card">
+      <img src="https://smartcaretea.com.br/wp-content/uploads/2023/11/Design-sem-nome-63-1.jpg" alt="niños jugando">
+      <h3>Juegos Divertidos</h3>
+      <p>Actividades para aprender sobre valores y amistad mientras nos divertimos.</p>
+    </div>
+    <div class="card">
+      <img src="https://img.freepik.com/premium-photo/little-boy-with-hands-full-paint-with-open-mouth-white-isolated-background_1136825-741.jpg" alt="oración niños">
+      <h3>Oración y Alabanza</h3>
+      <p>Momento especial para hablar con Dios y cantar juntos canciones alegres.</p>
+    </div>
+  </section>
+
+  <section class="icons">
+    <i class="fa-solid fa-sun"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-heart"></i>
+    <i class="fa-solid fa-dove"></i>
+    <i class="fa-solid fa-bible"></i>
+  </section>
+
+  <footer>
+    <p>¡Aprendiendo de Dios con alegría y amor! &copy; 2025</p>
+  </footer>
+
+  <script>
+    // Animación de bolitas flotantes aleatorias
+    const circles = document.querySelectorAll('.circle');
+    circles.forEach(circle => {
+      const randomX = Math.random() * window.innerWidth;
+      const randomY = Math.random() * window.innerHeight;
+      circle.style.left = randomX + 'px';
+      circle.style.top = randomY + 'px';
+      const randomDuration = 3 + Math.random() * 3;
+      circle.style.animationDuration = randomDuration + 's';
+    });
+  </script>
+
+</body>
+</html>
