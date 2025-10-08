@@ -1,268 +1,357 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jóvenes con Propósito - Iglesia Más Que Vencedores</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/1b2e9e7b6d.js" crossorigin="anonymous"></script>
-  <style>
-    :root {
-      --bg:#ffffff;
-      --muted:#6b7280;
-      --accent:#0f172a;
-      --primary:#111827;
-      --glass: rgba(255,255,255,0.6);
-      --card-shadow: 0 10px 30px rgba(17,24,39,0.08), 0 2px 6px rgba(17,24,39,0.04);
-      --soft-shadow: 0 8px 24px rgba(15,23,42,0.08);
-      --radius: 14px;
-      --gold:#facc15;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--primary);
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background: var(--accent);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-      box-shadow: var(--soft-shadow);
-      position: relative;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 3rem;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #e2e8f0;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 80px 10%;
-    }
-
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 600;
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 40px;
-      color: var(--accent);
-    }
-
-    .motivation {
-      display: grid;
-      gap: 2rem;
-    }
-
-    .motivation p {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      line-height: 1.7;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-      color: var(--primary);
-    }
-
-    .motivation strong {
-      color: var(--gold);
-      font-style: italic;
-    }
-
-    .cards {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--glass);
-      border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-
-    .card img {
-      width: 100%;
-      height: 240px;
-      border-radius: var(--radius);
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.4rem;
-      color: var(--accent);
-    }
-
-    .card p {
-      color: var(--muted);
-      margin-top: 10px;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .gallery {
-      margin-top: 80px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 250px;
-      border-radius: var(--radius);
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      box-shadow: var(--soft-shadow);
-    }
-
-    .gallery img:hover {
-      transform: scale(1.06);
-    }
-
-    .parallax {
-      background-image: url('https://noticias-mx.laiglesiadejesucristo.org/media/960x540/Manoskayudan4.jpg');
-      height: 400px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 2rem;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    footer {
-      background: var(--accent);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
-    }
-
-    footer i {
-      margin: 0 10px;
-      color: var(--gold);
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.4rem; }
-      .section { padding: 60px 6%; }
-      .motivation p { font-size: 1.1rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovenes Vencedores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+</head>
 </head>
 <body>
+    <style>
+        
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 
-  <header>
-    <h1>Jóvenes con Propósito</h1>
-    <p>Una familia que te espera <br>No tienes que aparentar ser fuerte. Aquí puedes ser tú.  
-           Una comunidad que te abraza y te ayuda a crecer en fe.</p>
-  </header>
 
-  <section class="section">
-    <h2>Palabras que transforman corazones</h2>
-    <div class="motivation">
-      <p>Quizás sientes que nadie te entiende, que el mundo va demasiado rápido y tú no encuentras tu lugar. Pero <strong>Dios nunca te olvidó</strong>. Él tiene un propósito especial para ti, algo que va más allá de lo que imaginas.</p>
-      <p>No eres un error, no eres un número más. <strong>Eres una obra maestra en proceso</strong>, creada con amor y con destino. Jesús no vino a buscar perfectos, vino por los heridos, los cansados, los vacíos... vino por ti.</p>
-      <p>Levántate, joven. Tu historia no termina aquí. <strong>Empieza ahora</strong>, en el momento en que decides dejar el miedo y abrazar el llamado que Dios tiene para ti.</p>
+/*Toda la caja content*/
+.content {
+    width: 100%;
+    left: 80px;
+    
+}
+
+/*Sombra contenido interno */
+.contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.contenido-btn {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+}
+
+.contenido-btn p {
+    color:brown;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 800;
+}
+
+.contenido-btn i {
+    background-color: aqua;
+    border-radius: 30px;
+    color: blue;
+    border: 1px solid;
+}
+
+.section-img {
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+
+}
+
+.section-img img {
+    width: 100%;
+    left: 0;
+    border-radius: 10px 0px 100px;
+}
+
+/*seccion de texto con iconos */
+.content-icons {
+    padding: 10px 10px;
+
+
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons i {
+    background-color: aqua;
+    border-radius: 100px;
+    border: 10px blue; 
+}
+
+h3 {
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+}
+
+p {
+    text-align: center;
+    margin: 0 auto;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+
+
+
+/*Seccion de imagenes jovenes*/
+.imagen-jovenes {
+    width: 100%;
+}
+
+/* Imagen principal ocupa toda la sección */
+.imagen-principal {
+    width: 100%;
+    height: 80vh; /* ocupa 80% de la altura de la ventana */
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* mantiene proporción y cubre toda la sección */
+    border-radius: 0 0 50px 50px; /* bordes redondeados abajo */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease;
+}
+
+.imagen-principal img:hover {
+    transform: scale(1.05);
+}
+
+/* Contenedor de imágenes secundarias */
+.imagenes-secundarias {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+/* Imágenes secundarias transparentes */
+.hero-imagen {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* ocupa toda la ventana */
+    overflow: hidden;
+}
+
+.hero-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ocupa todo el espacio sin deformarse */
+    filter: brightness(0.85); /* oscurece un poco para resaltar iconos */
+    transition: transform 0.5s ease;
+}
+
+.hero-imagen img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo común para los iconos */
+.hero-imagen i {
+    color: white;
+    background: rgba(0,0,0,0.4); /* semitransparente */
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 28px;
+    margin: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.hero-imagen i:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Contenedores de iconos */
+.iconos-superior, .iconos-central, .iconos-inferior {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+    gap: 25px;
+}
+
+.iconos-superior {
+    top: 10%;
+}
+
+.iconos-central {
+    top: 45%;
+}
+
+.iconos-inferior {
+    bottom: 10%;
+}
+
+/* Responsive para móviles */
+/* === Responsivo para pantallas pequeñas === */
+@media (max-width: 768px) {
+
+    /* Section img y contenido */
+    .section-img {
+        padding: 50px 10px;
+        font-size: 28px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-img img {
+        border-radius: 10px 0px 50px 50px;
+        height: auto;
+    }
+
+    /* Contenido con iconos */
+    .content-icons {
+        padding: 10px 5px;
+    }
+
+    .icons {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .icons i {
+        padding: 12px;
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    /* Imagenes principal y secundarias */
+    .imagen-principal {
+        height: 60vh;
+    }
+
+    .imagen-principal img {
+        border-radius: 0 0 30px 30px;
+    }
+
+    .imagenes-secundarias {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .imagenes-secundarias img {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* Hero imagen y iconos */
+    .hero-imagen {
+        height: 60vh;
+    }
+
+    .hero-imagen img {
+        height: 100%;
+    }
+
+    .hero-imagen i {
+        font-size: 22px;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .iconos-superior,
+    .iconos-central,
+    .iconos-inferior {
+        gap: 15px;
+    }
+
+    .iconos-central {
+        top: 40%;
+    }
+
+    .iconos-inferior {
+        bottom: 8%;
+    }
+}
+
+/* === Muy pequeña pantalla (teléfonos < 480px) === */
+@media (max-width: 480px) {
+    h3 {
+        font-size: 22px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .section-img {
+        font-size: 20px;
+        padding: 30px 5px;
+    }
+    .icons i {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .imagenes-secundarias img {
+        width: 95%;
+    }
+}
+
+
+    </style>
+    <div class="content">
+        <div class="contenido">
+            <div class="contenido-btn">
+                <p>
+                     <i class="fa-solid fa-phone"></i>
+                    Telefono
+                </p>
+                <p>
+                    <i class="fa-brands fa-tiktok"></i>
+                    Servicio
+                </p>
+            </div>
+            
+        </div>
     </div>
 
-    <div class="cards">
-      <div class="card">
-        <img src="https://tse3.mm.bing.net/th/id/OIP.Ev-EDXRri-SdJQe_2VvwngHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Adoración">
-        <h3>No estas Solo</h3>
-        <p>Dios te ve, te escucha y tiene un propósito que el mundo no puede darte.  
-       No importa dónde estés, Él puede empezar contigo justo ahora.</p>
-      </div>
+    <section class="section-img">
+        <h1>Jovenes Iglesia Mas que Vencedores</h1>
+        <div class="img">
+            <img src="https://thumbs.dreamstime.com/b/grupo-de-amigos-que-se-divierten-13672610.jpg">
+        </div>
+    </section>
 
-      <div class="card">
-        <img src="https://img.freepik.com/fotos-premium/retrato-fotografico-de-um-grupo-de-amigos-fazendo-um-gesto-de-braco-para-cima-maos-para-cima_763111-73633.jpg" alt="Amistad">
-        <h3>Una generación despierta en fe</h3>
-        <p>Hay momentos donde parece que todo se derrumba, que el vacío pesa más que la esperanza.  
-        Pero Jesús sigue aquí</strong>, con los brazos abiertos para recordarte que <strong> estás solo</strong>.</p>
-      <p>Él no te juzga por tu pasado, sino que te ofrece una nueva historia.  <strong>nadie debe pelear solo</strong>.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://www.vicencioconsultores.com/wp-content/uploads/2021/01/liderazgo.jpg" alt="Esperanza">
-        <h3>De la oscuridad a la luz</h3>
-        <p>Aun si el mundo te rechazó, Dios te sigue llamando por tu nombre.  
-           Eres valioso, eres amado, eres Su hijo.</p>
-      </div>
+   <div class="content-icons">
+    <div class="icons">
+        <i class="fas fa-hands-helping"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-lightbulb"></i>
     </div>
-  </section>
+    <h3>Mateo 11:28 Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.</h3>
+    <p class="parrafo">Aquí encontrarás un espacio seguro para compartir tus dudas, tristezas y recibir guía.</p>
+   </div>
 
-  <div class="parallax">
-    “Porque yo sé los planes que tengo para ustedes” — Jeremías 29:11
-  </div>
 
-  <section class="section">
-    <h2>Aunque ande en valle de sombra de muerte, no temeré mal alguno, porque Tú estás conmigo.  — Salmos 23:4</h2>
-    <div class="gallery">
-      <img src="https://i0.wp.com/assets.entrepreneur.com/content/3x2/2000/1597073210-GettyImages-958115088.jpg" alt="jóvenes orando">
-      <img src="https://th.bing.com/th/id/R.d50ab409714411b10778107d03a7ab9e?rik=OV3vx%2bh%2bnpjozw&pid=ImgRaw&r=0" alt="grupo de jóvenes">
-      <img src="https://i.ytimg.com/vi/S8ZJfC1lSkU/maxresdefault.jpg" alt="adoración">
-      <img src="https://images.cwtv.com/images/c/0049/CHSNPNN-101-TheChosenPhenomenon_148986-c11baffd-1920x1080.jpg" alt="amistad cristiana">
-      <img src="https://media.bible.art/7d690d1e-92c7-404a-9471-4346d83c0ca2-thumbnail.jpg" alt="amistad cristiana">
-      <img src="https://tse1.explicit.bing.net/th/id/OIP.DxQepG3qk4OgUgO1aCz_BwHaEJ?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="culto juvenil">
-    </div>
-  </section>
-
-  <footer>
-    <p>Ministerio Juvenil - Iglesia Más Que Vencedores</p>
-    <p>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-tiktok"></i>
-      <i class="fab fa-facebook"></i>
-      <i class="fas fa-praying-hands"></i>
-    </p>
-    <p>No dejes que el fuego de tu fe se apague. Eres luz en medio de la oscuridad.</p>
-  </footer>
-
+  
+    
 </body>
 </html>
